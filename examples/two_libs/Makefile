@@ -1,4 +1,5 @@
 RM = /usr/bin/rm
+MKDIR = /usr/bin/mkdir
 AR = /usr/bin/ar
 CC = /usr/bin/gcc
 CFLAGS = -Wall -pedantic -Wextra -ansi -O0 -g
@@ -12,7 +13,7 @@ clean:
 	@$(RM) -rvf $(LIBDIR)
 
 static:
-	@mkdir -pv $(LIBDIR)
+	@$(MKDIR) -pv $(LIBDIR)
 	@$(RM) -vf static_demo
 	@$(RM) -vf $(LIBDIR)/libsquares.a
 	$(CC) $(CFLAGS) -c squares.c -o squares.o
@@ -21,7 +22,7 @@ static:
 	$(CC) $(CFLAGS) -I$(INCDIR) -o static_demo main.c -lsquares -L$(LIBDIR)
 
 shared:
-	@mkdir -pv $(LIBDIR)
+	@$(MKDIR) -pv $(LIBDIR)
 	@$(RM) -vf shared_demo
 	@$(RM) -vf $(LIBDIR)/libsquares.so
 	$(CC) $(CFLAGS) -fPIC -c squares.c -o squares.o
