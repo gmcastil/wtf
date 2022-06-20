@@ -1,2 +1,3 @@
-# wtf
-Example code or interesting snippets to help explain something
+WTF
+===
+Bizarre problems I've run across or useful projects that may be helpful to some
